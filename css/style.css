@@ -1,0 +1,282 @@
+/* algemeen */
+body {
+    background-color: #282828;
+    font-family: 'PT Sans', sans-serif;
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+main {
+    overflow-x: hidden; /*om horizontale scroll te verwijderen ivm dot leaders (aanbod)*/
+}
+
+h1 {
+    display: none;
+}
+
+a {
+    color: rgb(41, 84, 223);
+}
+
+footer {
+    color: #fff;
+    margin-bottom: -20px;
+    font-size: small;
+    text-align: center;
+}
+
+footer img {
+    float: left;
+    padding-right: .5em;
+    margin-bottom: .5em;
+    width: auto;
+}
+
+
+/* navigatie */
+nav ul {
+    list-style: none;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #fff;
+}
+
+nav li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    padding: .5em 1em;
+}
+
+.current, nav li a:hover {
+    background-color: #1b9cff80;
+    transition: .3s;
+} 
+
+
+
+/* gallerij op homepage */
+.gallerij {
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: repeat(auto-fit, minmax(13.5em, 1fr));  /*fr = fraction: geen overflow */
+}
+  
+.gallerij img {
+    width: 100%;
+}
+
+
+/* logo café */
+header img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+
+/* contact pagina */
+.contact {
+    color: #fff;
+    text-align: center;
+}
+
+iframe {
+    display: block;
+    height: 20em;
+    margin: 2em auto;
+    width: 30em;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+section time {
+    font-weight: bold;
+    font-size: 140%;
+    color:  rgba(16,101,179,1);
+}
+
+
+/* over ons pagina */
+#corona-info {
+    width: 200px;
+    float: left;
+    margin: 15px;
+    border: 2px solid #1b9cff80;
+}
+
+article img {
+    max-width: 100%;
+}
+
+
+/* reserveer pagina */
+form {
+    width: 50%;
+    margin: 3em auto;
+    padding: 3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #1b9cff80;
+    color: rgb(0, 0, 0);
+}
+
+form input, select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2em;
+    padding: 2px;
+    margin: 10px 0;
+}
+
+form input:focus, select:focus {
+    background-color: rgb(199, 244, 255);
+}
+
+#submit-button {
+    height: 3em;
+    cursor: pointer;
+}
+
+
+/* aanbod pagina */
+.menu-container {
+    width: 100%;
+}
+
+.lijstmenu {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 4em;
+}
+    
+.lijstmenu li:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content:
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+}
+
+ .lijstmenu span {
+     background-color: #282828;
+}
+
+.lijstmenu span + span {
+    float: right;
+    padding-left: 0.33em;
+    background-color: #282828;
+    width: auto;
+}
+
+
+    @media screen and (min-width: 45em) {               /* tablet mode */
+
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,101,179,1) 30%, rgba(16,101,179,1) 70%, rgba(0,0,0,1) 100%);
+            color: rgb(0, 0, 0);
+        }
+
+        main {
+            width: 40em;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 5em;
+            margin: 0 5px;
+            border-bottom: none;
+        }
+
+        nav li a {
+            font-size: large;
+            border-radius: 3px;
+        }
+
+        .gallerij img:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        .lijstmenu span {
+            background-color: #fff;
+        }
+
+        .lijstmenu span + span {
+            background-color: #fff;
+        }
+
+        form {
+            background-color: #fff;
+        }
+
+        form input:focus, select:focus {
+            background-color: rgba(16,101,179,0.2);
+        }
+
+        .contact {
+            color: rgb(0, 0, 0);
+        }   
+
+  }
+
+
+    @media screen and (min-width: 70em) {               /* desktop mode */ 
+
+        main {
+            width: 65em;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        } 
+
+        .menu-child1 {
+            width: 500px;
+        
+        }
+        .menu-child2 {
+            width: 500px;
+        }
+
+        .lijstmenu li:before  {
+            content:
+            ". . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . "
+        }
+
+        .over-ons-container {
+            max-width: 45%;
+            margin: 20px;
+        }
+
+        .over-ons-parent {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        iframe {
+            width: 50em;
+        }    
+}
